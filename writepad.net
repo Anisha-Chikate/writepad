@@ -1,0 +1,88 @@
+Public Class Form1
+
+    Private Sub CutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CutToolStripMenuItem.Click
+        RichTextBox1.cut()
+    End Sub
+
+    Private Sub CopyToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyToolStripMenuItem.Click
+        RichTextBox1.copy()
+    End Sub
+
+    Private Sub PasteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PasteToolStripMenuItem.Click
+        richtextbox1.paste()
+    End Sub
+
+    Private Sub FontToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FontToolStripMenuItem.Click
+        If FontDialog1.ShowDialog <> Windows.Forms.DialogResult.Cancel Then
+            RichTextBox1.Font = FontDialog1.Font
+        End If
+    End Sub
+
+    Private Sub ForecolorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ForecolorToolStripMenuItem.Click
+        If ColorDialog1.ShowDialog <> Windows.Forms.DialogResult.Cancel Then
+            RichTextBox1.ForeColor = ColorDialog1.Color
+        End If
+    End Sub
+    Private Sub BackcolorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BackcolorToolStripMenuItem.Click
+        If ColorDialog1.ShowDialog <> Windows.Forms.DialogResult.Cancel Then
+            RichTextBox1.BackColor = ColorDialog1.Color
+        End If
+    End Sub
+
+    Private Sub UndoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UndoToolStripMenuItem.Click
+        RichTextBox1.Undo()
+    End Sub
+
+    Private Sub RedoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RedoToolStripMenuItem.Click
+        RichTextBox1.Redo()
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
+        End
+    End Sub
+
+    Private Sub ToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton1.Click
+
+    End Sub
+ Private Sub CutToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CutToolStripButton.Click
+        RichTextBox1.Cut()
+    End Sub
+
+    Private Sub CopyToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyToolStripButton.Click
+        RichTextBox1.Copy()
+    End Sub
+
+    Private Sub PasteToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PasteToolStripButton.Click
+        RichTextBox1.Paste()
+    End Sub
+
+    Private Sub UppercaseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+
+    End Sub
+
+    Private Sub EleteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EleteToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub CenterToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CenterToolStripMenuItem.Click
+        RichTextBox1.SelectionAlignment = HorizontalAlignment.Center
+    End Sub
+     Private Sub RightToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RightToolStripMenuItem.Click
+        RichTextBox1.SelectionAlignment = HorizontalAlignment.Right
+    End Sub
+
+    Private Sub LeftToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LeftToolStripMenuItem.Click
+        RichTextBox1.SelectionAlignment = HorizontalAlignment.Left
+    End Sub
+
+    Private Sub RichTextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RichTextBox1.TextChanged
+
+    End Sub
+
+    Private Sub SpeakToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpeakToolStripMenuItem.Click
+        Dim SAPI As Object
+        SAPI = CreateObject("SAPI.spvoice")
+        SAPI.speak(RichTextBox1.Text)
+    End Sub
+End Class
